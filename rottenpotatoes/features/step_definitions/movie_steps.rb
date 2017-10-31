@@ -1,7 +1,7 @@
 #byebug
 
 # Add a declarative step here for populating the DB with movies.
-Given /the following movies exist/ do |movies_table|
+Given /the following movies exist/ do |movies|
   movie.create
 end
   
