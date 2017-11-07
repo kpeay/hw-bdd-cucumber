@@ -33,7 +33,7 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   # enter step(s) to ensure that PG and R movies are visible
   Then I should see movies rated: PG, R
   # enter step(s) to ensure that other movies are not visible
-  Then I should not see movies rated: PG-13
+  Then I should not see movies rated: G, PG-13
   
 
 Scenario: all ratings selected
