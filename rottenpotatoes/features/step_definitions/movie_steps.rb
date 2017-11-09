@@ -30,6 +30,18 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
   else
 	  rating_list.split(',').each {|x| step %(I check "ratings_#{x}")}
   end
+  
+When /^(?:|I )select "([^"]*)" from "([^"]*)"$/ do |value, field|
+  select(value, :from => field)
+  end
+
+When /^(?:|I )check "([^"]*)"$/ do |field|
+  check(field)
+  end
+
+  When /^(?:|I )uncheck "([^"]*)"$/ do |field|
+  uncheck(field)
+  end
 end
 
 Then /I should not see any of the movies/ do
