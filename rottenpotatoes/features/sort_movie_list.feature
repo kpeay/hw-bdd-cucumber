@@ -23,11 +23,20 @@ Background: movies have been added to database
   Then 10 seed movies should exist
 
 Scenario: sort movies alphabetically
-  When I follow "Movie Title"
   # your steps here
+  When I check the following ratings: G, PG, PG-13, R
+  And I press "ratings_submit"
+  Then I should be on the home page
+  And I should see all of the movies
+  When I follow "Movie Title"
   Then I should see "Aladdin" before "Amelie"
 
 Scenario: sort movies in increasing order of release date
-  When I follow "Release Date"
   # your steps here
-  Then I should see "Chicken Run" before "The Help"
+  When I check the following ratings: G, PG, PG-13, R
+  And I press "ratings_submit"
+  Then I should be on the home page
+  And I should see all of the movies
+  When I follow "Release Date"
+  Then I should be on the homepage
+  And I should see "Chicken Run" before "The Incredibles"
