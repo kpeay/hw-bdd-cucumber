@@ -24,7 +24,7 @@ Background: movies have been added to database
 
 Scenario: sort movies alphabetically
   # your steps here
-  When I check the following ratings: G, PG, PG-13, R
+  When I check the following ratings: "G, PG, PG-13, R"
   And I press "ratings_submit"
   Then I should be on the home page
   And I should see all of the movies
@@ -41,7 +41,7 @@ Scenario: sort movies alphabetically
 
 Scenario: sort movies in increasing order of release date
   # your steps here
-  When I check the following ratings: G, PG, PG-13, R
+  When I check the following ratings: "G, PG, PG-13, R"
   And I press "ratings_submit"
   Then I should be on the home page
   And I should see all of the movies
