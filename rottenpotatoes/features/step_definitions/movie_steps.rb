@@ -44,16 +44,6 @@ When /^(?:|I )check "([^"]*)"$/ do |field|
   end
 end
 
-Then /I should not see any of the movies/ do
-	rows = page.all('@movies tr').size - 1
-	assert rows == 0
-end
-
-Then /I should see all of the movies/ do
-	rows = page.all('@movies tr').size - 1
-	assert rows = Movie.count()
-end
-
 Given(/^I am on the RottenPotatoes home page$/) do
   pending # express the regexp above with the code you wish you had
  end
@@ -63,7 +53,8 @@ Given(/^I am on the RottenPotatoes home page$/) do
  end
  
  Then(/^I should see "(.*?)"$/) do |arg1|
-   pending # express the regexp above with the code you wish you had
+   rows = page.all('@movies tr').size - 1
+	 assert rows = Movie.count()
  end
  
  Then(/^I should not see "(.*?)"$/) do |arg1|
@@ -71,7 +62,8 @@ Given(/^I am on the RottenPotatoes home page$/) do
  end
  
  Then(/^I should not see all of the movies$/) do
-   pending # express the regexp above with the code you wish you had
+   rows = page.all('@movies tr').size - 1
+	 assert rows == 0
  end
 
  Given(/^I am on the RottenPotatoes home page$/) do
