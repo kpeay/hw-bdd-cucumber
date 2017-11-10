@@ -45,18 +45,18 @@ Given(/^I am on the RottenPotatoes home page$/) do
  end
  
  Then(/^I should see "(.*?)"$/) do |arg1|
-   rows = page.all('@movies tr').size - 1
-	 assert rows = Movie.count()
+   pending # express the regexp above with the code you wish you had
  end
  
  Then(/^I should not see "(.*?)"$/) do |arg1|
    pending # express the regexp above with the code you wish you had
  end
  
- Then(/^I should not see all of the movies$/) do
-   rows = page.all('@movies tr').size - 1
-	 assert rows == 0
+
+Then(/^I should see all of the movies$/) do
+   pending # express the regexp above with the code you wish you had
  end
+ 
 
  Given(/^I am on the RottenPotatoes home page$/) do
   pending # express the regexp above with the code you wish you had
