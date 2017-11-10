@@ -21,7 +21,7 @@ end
 #  "When I uncheck the following ratings: PG, G, R"
 #  "When I check the following ratings: G"
 
-When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
+When /I (un)?check the following ratings: "(.*)"/ do |uncheck, rating_list|
   # HINT: use String#split to split up the rating_list, then
   #   iterate over the ratings and reuse the "When I check..." or
   #   "When I uncheck..." steps in lines 89-95 of web_steps.rb
@@ -30,19 +30,11 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
   else
 	  rating_list.split(',').each {|x| step %(I check "ratings_#{x}")}
   end
+end
   
 When /^(?:|I )select "([^"]*)" from "([^"]*)"$/ do |value, field|
   select(value, :from => field)
   end
-
-When /^(?:|I )check "([^"]*)"$/ do |field|
-  check(field)
-  end
-
-  When /^(?:|I )uncheck "([^"]*)"$/ do |field|
-  uncheck(field)
-  end
-end
 
 Given(/^I am on the RottenPotatoes home page$/) do
   pending # express the regexp above with the code you wish you had
